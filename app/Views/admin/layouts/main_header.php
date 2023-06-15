@@ -20,7 +20,8 @@
     <link href="<?= base_url(); ?>/template/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="<?= base_url(); ?>/template/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
+    <!-- Select2 -->
+    <link href="<?= base_url(); ?>/template/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
     <!-- bootstrap-progressbar -->
     <link href="<?= base_url(); ?>/template/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css"
         rel="stylesheet">
@@ -39,6 +40,7 @@
         rel="stylesheet">
     <link href="<?= base_url(); ?>/template/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
         rel="stylesheet">
+
 
     <!-- Custom Theme Style -->
     <link href="<?= base_url(); ?>/template/build/css/custom.min.css" rel="stylesheet">

@@ -9,8 +9,8 @@ class Ships extends Model
     protected $table            = 'ships';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType     = 'object';
-    protected $allowedFields = ['ship_name', 'flag'];
+    protected $returnType       = 'object';
+    protected $allowedFields    = ['ship_name', 'flag'];
 
     public function getById($id)
     {

@@ -24,7 +24,6 @@ class ShipsController extends BaseController
 
     public function create()
     {
-        session();
         $data['title'] = 'Create Ship';
         $data['isNewRecord'] = true;
         $data['validation'] = \Config\Services::validation();

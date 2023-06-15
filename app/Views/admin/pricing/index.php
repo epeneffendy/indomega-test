@@ -23,27 +23,27 @@
                         </div>
                         <?php endif; ?>
                         <div class="pull-right">
-                            <a href="<?= base_url('ships/create') ?>" class="btn btn-success btn-sm mb-3">Create</a>
+                            <a href="<?= base_url('pricing/create') ?>" class="btn btn-success btn-sm mb-3">Create</a>
                         </div>
                         <div class="card-box table-responsive">
                             <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Ship</th>
-                                        <th>Flag Country</th>
+                                        <th>Price Per Day</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php if (count($models) > 0) : ?>
-                                    <?php foreach ($models as $item) : ?>
+                                    <?php foreach ($models as $item) : dd($item->ships); ?>
                                     <tr>
-                                        <td><?= $item->ship_name ?></td>
-                                        <td><?= $item->flag ?></td>
+                                        <td><?= $item->ship_id ?></td>
+                                        <td>Rp. <?= number_format($item->price_per_day) ?></td>
                                         <td>
-                                            <a href="<?= base_url('ships/edit/' . $item->id) ?>"
+                                            <a href="<?= base_url('pricing/edit/' . $item->id) ?>"
                                                 class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span></a>
-                                            <a href="<?= base_url('/ships/delete/' . $item->id) ?>"
+                                            <a href="<?= base_url('/pricing/delete/' . $item->id) ?>"
                                                 class="btn btn-danger btn-sm"
                                                 onclick="return confirm('Are you sure to delete this data!')"><span
                                                     class="fa fa-trash"></span></a>

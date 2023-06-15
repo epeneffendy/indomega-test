@@ -43,6 +43,15 @@ $routes->get('/ships/create', 'Admin\ShipsController::create');
 $routes->post('/ships/save', 'Admin\ShipsController::save');
 $routes->get('/ships/edit/(:num)', 'Admin\ShipsController::edit/$1');
 $routes->get('/ships/delete/(:num)', 'Admin\ShipsController::delete/$1');
+
+//Pricing
+$routes->get('/pricing', 'Admin\PricingController::index');
+$routes->get('/pricing/create', 'Admin\PricingController::create');
+$routes->post('/pricing/save', 'Admin\PricingController::save');
+$routes->get('/pricing/edit/(:num)', 'Admin\PricingController::edit/$1');
+$routes->get('/pricing/delete/(:num)', 'Admin\PricingController::delete/$1');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

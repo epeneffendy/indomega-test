@@ -28,7 +28,7 @@
                     <li><a><i class="fa fa-home"></i> Master <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="<?= base_url('ships'); ?>">Ships</a></li>
-                            <li><a href="<?= base_url('pricings'); ?>">Pricing</a></li>
+                            <li><a href="<?= base_url('pricing'); ?>">Pricing</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-desktop"></i> Rents <span class="fa fa-chevron-down"></span></a>

@@ -46,7 +46,8 @@
 <!-- bootstrap-daterangepicker -->
 <script src="<?= base_url(); ?>/template/vendors/moment/min/moment.min.js"></script>
 <script src="<?= base_url(); ?>/template/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
+<!-- Select2 -->
+<script src="<?= base_url(); ?>/template/vendors/select2/dist/js/select2.full.min.js"></script>
 <!-- Datatables -->
 <script src="<?= base_url(); ?>/template/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?= base_url(); ?>/template/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -67,6 +68,11 @@
 <!-- Custom Theme Scripts -->
 <script src="<?= base_url(); ?>/template/build/js/custom.min.js"></script>
 
+<script>
+$(function() {
+    $('.select2').select2()
+});
+</script>
 
 </body>
 

@@ -6,36 +6,17 @@ use CodeIgniter\Model;
 
 class Pricing extends Model
 {
-    protected $DBGroup          = 'default';
-    protected $table            = 'pricings';
+    protected $table            = 'pricing';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $returnType       = 'object';
+    protected $allowedFields    = ['ship_id', 'price_per_day'];
 
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
-
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
-
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    public function getAll()
+    {
+        $data = $this->db->table('pricing');
+        $data->join('ships', 'ships.id = pricing.ship_id');
+        $query = $data->get();
+        return $query;
+    }
 }
