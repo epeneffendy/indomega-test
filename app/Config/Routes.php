@@ -30,9 +30,19 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
+
+//Login
 $routes->get('/', 'Admin\LoginController::index');
+
+//Dashboard
 $routes->get('/dashboard', 'Admin\DashboardController::index');
 
+//Ships
+$routes->get('/ships', 'Admin\ShipsController::index');
+$routes->get('/ships/create', 'Admin\ShipsController::create');
+$routes->post('/ships/save', 'Admin\ShipsController::save');
+$routes->get('/ships/edit/(:num)', 'Admin\ShipsController::edit/$1');
+$routes->get('/ships/delete/(:num)', 'Admin\ShipsController::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
