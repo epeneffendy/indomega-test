@@ -24,4 +24,9 @@ class Pricing extends Model
     {
         return $this->where('id', $id)->first();
     }
+
+    public function getByShip($id)
+    {
+        return $this->where('ship_id', $id)->first();
+    }
 }

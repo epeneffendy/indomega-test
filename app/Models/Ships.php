@@ -16,4 +16,12 @@ class Ships extends Model
     {
         return $this->where('id', $id)->first();
     }
+
+    public function getShipPrice()
+    {
+        $data = $this->db->table('ships');
+        $data->join('pricing', 'ships.id = pricing.ship_id');
+        $query = $data->get()->getResult();
+        return $query;
+    }
 }

@@ -64,14 +64,17 @@
 <script src="<?= base_url(); ?>/template/vendors/jszip/dist/jszip.min.js"></script>
 <script src="<?= base_url(); ?>/template/vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="<?= base_url(); ?>/template/vendors/pdfmake/build/vfs_fonts.js"></script>
-
 <!-- Custom Theme Scripts -->
 <script src="<?= base_url(); ?>/template/build/js/custom.min.js"></script>
 
+<?php if (isset($js_page)) { ?>
+    <script src="<?= base_url('js/') . $js_page ?>"></script>
+<?php } ?>
+
 <script>
-$(function() {
-    $('.select2').select2()
-});
+    $(function() {
+        $('.select2').select2()
+    });
 </script>
 
 </body>

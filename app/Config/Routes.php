@@ -51,6 +51,14 @@ $routes->post('/pricing/save', 'Admin\PricingController::save');
 $routes->get('/pricing/edit/(:num)', 'Admin\PricingController::edit/$1');
 $routes->get('/pricing/delete/(:num)', 'Admin\PricingController::delete/$1');
 
+//Rents
+$routes->get('/rents', 'Admin\RentsController::index');
+$routes->get('/rents/create', 'Admin\RentsController::create');
+$routes->post('/rents/save', 'Admin\RentsController::save');
+$routes->get('/rents/edit/(:num)', 'Admin\RentsController::edit/$1');
+$routes->get('/rents/delete/(:num)', 'Admin\RentsController::delete/$1');
+$routes->post('/rents/get_price', 'Admin\RentsController::get_price');
+
 
 /*
  * --------------------------------------------------------------------
