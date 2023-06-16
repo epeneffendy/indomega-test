@@ -1,5 +1,4 @@
 <?= $this->extend('admin/layouts/main_layout'); ?>
-
 <?= $this->section('content'); ?>
 
 <div class="col-md-12 col-sm-12  ">
@@ -23,7 +22,9 @@
                                 <select class="form-control select2" name="ship_id">
                                     <option value="">Choose option</option>
                                     <?php foreach ($ships as $item) : ?>
-                                    <option value="<?= $item->id ?>"><?= $item->ship_name ?></option>
+                                    <option value="<?= $item->id ?>"
+                                        <?= (@$model->ship_id) ? ($model->ship_id == $item->id) ? 'selected' : '' : '' ?>>
+                                        <?= $item->ship_name ?></option>
                                     <?php endforeach ?>
                                 </select>
 
@@ -33,7 +34,7 @@
                             <label class="control-label col-md-3 col-sm-3 col-xs-3">Price Per Day</label>
                             <div class="col-md-9 col-sm-9 col-xs-9 form-group has-feedback">
                                 <input type="number" name="price_per_day" class="form-control has-feedback-left"
-                                    value="<?= @$model->price_per_day  ?> ">
+                                    value="<?= @$model->price_per_day ?>" />
                                 <span class="form-control-feedback left" aria-hidden="true">Rp</span>
                             </div>
                         </div>

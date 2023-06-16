@@ -19,7 +19,6 @@ class PricingController extends BaseController
 
     public function index()
     {
-        dd($this->model->getAll());
         $data['title'] = 'Price';
         $data['models'] = $this->model->getAll();
         return view('admin/pricing/index', $data);
@@ -50,6 +49,28 @@ class PricingController extends BaseController
             ]);
         }
         session()->setFlashdata('success', 'Data saved successfully!');
+        return redirect()->to('/pricing');
+    }
+
+    public function edit($id = null)
+    {
+        $model = $this->model->getById($id);
+        if (isset($model)) {
+            $data['title'] = 'Update Pricing';
+            $data['isNewRecord'] = false;
+            $data['model'] = $model;
+            $data['ships'] = $this->ships->findAll();
+            return view('admin/pricing/form', $data);
+        } else {
+            session()->setFlashdata('failed', 'Data not found!');
+            return redirect()->to('/pricing');
+        }
+    }
+
+    public function delete($id = null)
+    {
+        $this->model->delete($id);
+        session()->setFlashdata('success', 'Data deleted successfully!');
         return redirect()->to('/pricing');
     }
 }
